@@ -27,12 +27,34 @@
                 border-radius: 15px;
                 background-color: #ecf0f1;
             }
+            
+            #main{
+                
+                padding: 30px;
+                border-radius: 15px;
+                background-color: #95a5a6;
+            }
+            
         </style>
     </head>
     <body>
         <info:pageHeader title="Main Menu"/>
-        <div class="container">
-        <h1>Welcome to SAMA Bank</h1>
+        <div class="container-fluid">
+            <div id="main">
+        <nav class="navbar navbar-default">
+        
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="viewdata">View User Data</a></li>
+                    <li><a href="withdraw">Withdraw</a></li>
+                    <li><a href="deposit">Deposit</a></li>
+                    <li><a href="transfer">Transfer</a></li>
+                </ul>
+            </nav>
+            <h1>Welcome to SAMA Bank</h1>
+            </div>
+            </div>
+            
+        
         </div>
     </body>
 </html>
