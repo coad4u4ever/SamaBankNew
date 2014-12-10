@@ -23,7 +23,8 @@
                 max-width: 500px;
                 padding: 15px;
                 margin: 0 auto;
-                background-color: #95a5a6;
+                background-color: #2ecc71;
+                border-radius: 10px;
                 
             }
             .form-signin .form-signin-heading,
@@ -57,7 +58,7 @@
             }
             
         </style>
-        <title>JSP Page</title>
+        <title>Sama Bank</title>
     </head>
     <body>
         <div class="container-fluid">
