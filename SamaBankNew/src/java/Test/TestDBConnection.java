@@ -33,9 +33,7 @@ public class TestDBConnection {
          */
 
         BankAccount ba = BankAccount.findAccountByAccountID(100200300);
-        ba.deposite(500);
-        ba.withdraw(200);
-        ba.withdraw(500);
+        ba.transfer(100200301, 50);
 
     }
 

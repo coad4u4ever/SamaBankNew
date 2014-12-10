@@ -267,6 +267,8 @@ public class BankAccount implements Serializable {
         Connection con = ConnectionAgent.getConnection();
         BankAccount ba = BankAccount.findAccountByAccountID(accountIdDestination);
         if (withdraw(money) && ba.deposite(money)) {
+            Transaction.createTransaction(this.accountId, "OFER", money);
+            Transaction.createTransaction(accountIdDestination, "RECR", money);
             return true;
         } else {
             return false;
