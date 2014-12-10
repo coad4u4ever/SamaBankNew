@@ -1,6 +1,5 @@
 package Servlets;
 
-import Models.BankAccount;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -13,35 +12,19 @@ import javax.servlet.http.HttpSession;
  *
  * @author coad4u4ever
  */
-public class Login extends HttpServlet {
+public class Logout extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String id = request.getParameter("id");
-        String password = request.getParameter("password");
-        BankAccount ba = BankAccount.findAccountByID(id);
-        String msg = "";
-        if (ba == null) {
-            msg = "Invalid ID";
-            request.setAttribute("msg", msg);
-            getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
-        } else {
-            String realPassword = ba.getPassword();
-            if (password.equals(realPassword)) {
-                HttpSession s = request.getSession();
-                s.setAttribute("bankuser", ba);
-                s.setMaxInactiveInterval(60*60*24*7);
-                getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
-            } else {
-                msg = "Invalid Password";
-                request.setAttribute("msg", msg);
-                getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
-            }
-        }
 
+        HttpSession s = request.getSession();
+        if (s.getAttribute("bankuser") != null) {
+            s.invalidate();
+        }
+        getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
