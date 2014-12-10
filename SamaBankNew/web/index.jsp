@@ -5,13 +5,34 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib tagdir="/WEB-INF/tags/" prefix="info"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="assets/dist/css/flat-ui.min.css"/>
+        <link rel="stylesheet" href="assets/dist/js/flat-ui.js"/>
+        <link rel="stylesheet" href="assets/dist/css/vendor/bootstrap.min.css"/>
+        <style>
+            body{
+                padding: 100px;
+                padding-top: 10px;
+                padding-left: 100px;
+                background-color: #2ecc71;
+            }
+            .form-group{
+                max-width: 600px;
+                padding: 20px;
+                border-radius: 15px;
+                background-color: #ecf0f1;
+            }
+        </style>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <info:pageHeader title="Main Menu"/>
+        <div class="container">
+        <h1>Welcome to SAMA Bank</h1>
+        </div>
     </body>
 </html>
