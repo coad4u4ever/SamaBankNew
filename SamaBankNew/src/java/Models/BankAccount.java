@@ -130,6 +130,24 @@ public class BankAccount implements Serializable {
         return ba;
     }
 
+    public static double getBalanceByAccountID(long accid) {
+        double balance = 0.0;
+        Connection con = ConnectionAgent.getConnection();
+        final String FIND_BALANCE_BY_ACCOUNT_ID_SQL = "SELECT BALANCE FROM BANKACCOUNT WHERE ACCOUNTID = ?";
+        try {
+            PreparedStatement psm = con.prepareStatement(FIND_BALANCE_BY_ACCOUNT_ID_SQL);
+            psm.setLong(1, accid);
+            ResultSet rs = psm.executeQuery();
+            if (rs.next()) {
+                balance = rs.getDouble(1);
+            }
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+            return -1;
+        }
+        return balance;
+    }
+
     public static BankAccount findAccountByAccountID(long test) {
         BankAccount ba = null;
         Connection con = ConnectionAgent.getConnection();
@@ -207,13 +225,14 @@ public class BankAccount implements Serializable {
     public boolean deposite(double money) {
         //final String GET_OLD_MONEY_SQL = "SELECT BALANCE FROM BANKACCOUNT WHERE ACCOUNTID = ?";
         final String DEPOSITE_MONEY_SQL = "UPDATE BANKACCOUNT SET BALANCE = ? WHERE ACCOUNTID = ?";
-        double oldMoney = this.balance;
+        double oldMoney = getBalanceByAccountID(this.accountId);
         try {
             Connection con = ConnectionAgent.getConnection();
             PreparedStatement psm = con.prepareStatement(DEPOSITE_MONEY_SQL);
             psm.setDouble(1, oldMoney + money);
             psm.setLong(2, this.accountId);
             int done = psm.executeUpdate();
+            Transaction.createTransaction(this.accountId, "DEPO", money);
             return done > 0;
         } catch (SQLException ex) {
             System.out.println(ex);
@@ -223,18 +242,24 @@ public class BankAccount implements Serializable {
 
     public boolean withdraw(double money) {
         //final String GET_OLD_MONEY_SQL = "SELECT BALANCE FROM BANKACCOUNT WHERE ACCOUNTID = ?";
-        final String DEPOSITE_MONEY_SQL = "UPDATE BANKACCOUNT SET BALANCE = ? WHERE ACCOUNTID = ?";
-        double oldMoney = this.balance;
-        try {
-            Connection con = ConnectionAgent.getConnection();
-            PreparedStatement psm = con.prepareStatement(DEPOSITE_MONEY_SQL);
-            psm.setDouble(1, oldMoney - money);
-            psm.setLong(2, this.accountId);
-            int done = psm.executeUpdate();
-            return done > 0;
-        } catch (SQLException ex) {
-            System.out.println(ex);
+        final String WITHDRAW_SQL = "UPDATE BANKACCOUNT SET BALANCE = ? WHERE ACCOUNTID = ?";
+
+        double oldMoney = getBalanceByAccountID(this.accountId);
+        if (money > oldMoney) {
             return false;
+        } else {
+            try {
+                Connection con = ConnectionAgent.getConnection();
+                PreparedStatement psm = con.prepareStatement(WITHDRAW_SQL);
+                psm.setDouble(1, oldMoney - money);
+                psm.setLong(2, this.accountId);
+                int done = psm.executeUpdate();
+                Transaction.createTransaction(this.accountId, "WIDR", money);
+                return done > 0;
+            } catch (SQLException ex) {
+                System.out.println(ex);
+                return false;
+            }
         }
     }
 
@@ -242,6 +267,8 @@ public class BankAccount implements Serializable {
         Connection con = ConnectionAgent.getConnection();
         BankAccount ba = BankAccount.findAccountByAccountID(accountIdDestination);
         if (withdraw(money) && ba.deposite(money)) {
+            Transaction.createTransaction(this.accountId, "OFER", money);
+            Transaction.createTransaction(accountIdDestination, "RECR", money);
             return true;
         } else {
             return false;
@@ -258,7 +285,7 @@ public class BankAccount implements Serializable {
             ResultSet rs = psm.executeQuery();
             while (rs.next()) {
                 ba = new BankAccount();
-                if(list==null){
+                if (list == null) {
                     list = new ArrayList<>();
                 }
                 getBankAccount(rs, ba);

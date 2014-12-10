@@ -8,10 +8,10 @@ import java.util.Date;
  */
 public class DateMaker {
 
-   /* public static String dateMaking() {
-        Date d = new Date();
-        java.sql.Date d2 = new java.sql.Date(d.getYear(), d.getMonth(), d.getDate());
-
-        System.out.println(d2);
-    }*/
+    public static String dateAndTimeMaking() {
+        java.util.Date dt = new java.util.Date();
+        java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String currentTime = sdf.format(dt);
+        return currentTime;
+    }
 }
