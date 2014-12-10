@@ -225,13 +225,14 @@ public class BankAccount implements Serializable {
     public boolean deposite(double money) {
         //final String GET_OLD_MONEY_SQL = "SELECT BALANCE FROM BANKACCOUNT WHERE ACCOUNTID = ?";
         final String DEPOSITE_MONEY_SQL = "UPDATE BANKACCOUNT SET BALANCE = ? WHERE ACCOUNTID = ?";
-        double oldMoney = this.balance;
+        double oldMoney = getBalanceByAccountID(this.accountId);
         try {
             Connection con = ConnectionAgent.getConnection();
             PreparedStatement psm = con.prepareStatement(DEPOSITE_MONEY_SQL);
             psm.setDouble(1, oldMoney + money);
             psm.setLong(2, this.accountId);
             int done = psm.executeUpdate();
+            Transaction.createTransaction(this.accountId, "DEPO", money);
             return done > 0;
         } catch (SQLException ex) {
             System.out.println(ex);
@@ -241,18 +242,24 @@ public class BankAccount implements Serializable {
 
     public boolean withdraw(double money) {
         //final String GET_OLD_MONEY_SQL = "SELECT BALANCE FROM BANKACCOUNT WHERE ACCOUNTID = ?";
-        final String DEPOSITE_MONEY_SQL = "UPDATE BANKACCOUNT SET BALANCE = ? WHERE ACCOUNTID = ?";
-        double oldMoney = this.balance;
-        try {
-            Connection con = ConnectionAgent.getConnection();
-            PreparedStatement psm = con.prepareStatement(DEPOSITE_MONEY_SQL);
-            psm.setDouble(1, oldMoney - money);
-            psm.setLong(2, this.accountId);
-            int done = psm.executeUpdate();
-            return done > 0;
-        } catch (SQLException ex) {
-            System.out.println(ex);
+        final String WITHDRAW_SQL = "UPDATE BANKACCOUNT SET BALANCE = ? WHERE ACCOUNTID = ?";
+
+        double oldMoney = getBalanceByAccountID(this.accountId);
+        if (money > oldMoney) {
             return false;
+        } else {
+            try {
+                Connection con = ConnectionAgent.getConnection();
+                PreparedStatement psm = con.prepareStatement(WITHDRAW_SQL);
+                psm.setDouble(1, oldMoney - money);
+                psm.setLong(2, this.accountId);
+                int done = psm.executeUpdate();
+                Transaction.createTransaction(this.accountId, "WIDR", money);
+                return done > 0;
+            } catch (SQLException ex) {
+                System.out.println(ex);
+                return false;
+            }
         }
     }
 

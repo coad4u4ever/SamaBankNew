@@ -75,7 +75,27 @@ public class Transaction {
     public String toString() {
         return "Transaction{" + "transactionNo=" + transactionNo + ", accountId=" + accountId + ", date=" + date + ", code=" + code + ", amount=" + amount + ", balance=" + balance + '}';
     }
+
     // </editor-fold>
+    static {
+        NEXT_TRANSACTION_NO = getNewTransactionNO();
+    }
+
+    private static long getNewTransactionNO() {
+        try {
+            Connection con = ConnectionAgent.getConnection();
+            final String GET_NEW_TRANSACTION_NO_SQL = "SELECT MAX(transactionno) FROM TRANSACTION";
+            ResultSet rs = con.createStatement().executeQuery(GET_NEW_TRANSACTION_NO_SQL);
+            if (rs.next()) {
+                return rs.getLong(1) + 1;
+            } else {
+                return 0;
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+            return -1;
+        }
+    }
 
     public static boolean createTransaction(Long accid, String code, Double amount) {
         final String INSERT_NEW_TRANSACTION_SQL = "INSERT INTO TRANSACTION(TRANSACTIONNO,ACCOUNTID,DATE,CODE,AMOUNT,BALANCE) VALUES(?,?,?,?,?,?)";
@@ -126,7 +146,7 @@ public class Transaction {
             psm.setLong(1, accid);
             ResultSet rs = psm.executeQuery();
             while (rs.next()) {
-                if(trans==null){
+                if (trans == null) {
                     trans = new ArrayList<>();
                 }
                 tran = new Transaction();

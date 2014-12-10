@@ -12,30 +12,31 @@ import java.util.function.Consumer;
 public class TestDBConnection {
 
     public static void main(String[] args) {
-        /* BankAccount ba = BankAccount.findAccountByAccountID(100200300);
-
+        /* 
+         BankAccount ba = BankAccount.findAccountByAccountID(100200300);
          System.out.println(ba.toString());
-        
          java.util.Date dt = new java.util.Date();
-
          java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
          String currentTime = sdf.format(dt);
-        
-         System.out.println(currentTime);
+         System.out.println(currentTime);    
+         Transaction ta = Transaction.findTransactionByTransactionNO(100000001);
+         System.out.println(ta.toString());
+         System.out.println("//////");
+         List ta2 = Transaction.findAllTransactionByBankAccountID(100200300);
+         ta2.stream().forEach(new Consumer<Transaction>() {
+         public void accept(Transaction t) {
+         System.out.println(t.toString());
+         }
+         });      
+         long t = 100200300;
+         Transaction.createTransaction(t, "DEPO", 500.00);            
          */
-        Transaction ta = Transaction.findTransactionByTransactionNO(100000001);
-        System.out.println(ta.toString());
-        System.out.println("//////");
-        List ta2 = Transaction.findAllTransactionByBankAccountID(100200300);
 
-        ta2.stream().forEach(new Consumer<Transaction>() {
-            public void accept(Transaction t) {
-                System.out.println(t.toString());
-            }
-        });
-        long t = 100200300;
-        Transaction.createTransaction(t, "DEPO", 500.0);
+        BankAccount ba = BankAccount.findAccountByAccountID(100200300);
+        ba.deposite(500);
+        ba.withdraw(200);
+        ba.withdraw(500);
+
     }
 
 }
