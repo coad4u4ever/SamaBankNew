@@ -36,6 +36,8 @@
                 <label>Account ID: </label><input type="text" name="id" value="Auto Number" readonly class="form-control"/>
                 <label>User ID: </label><input type="text" name="accountid" placeholder="Enter User ID" class="form-control"/>
                 <label>Password: </label><input type="password" name="password" placeholder="Enter Password" class="form-control"/>
+                <label>Re-Password: </label><input type="password" name="Repassword" placeholder="Enter Password Again" class="form-control"/>
+                
                 <label>First Name:</label><input type="text" name="fname" placeholder="Enter First Name" class="form-control"/>
                 <label>Last Name:</label><input type="text" name="lname" placeholder="Enter Last Name" class="form-control"/>
                 <label>Balance:</label><input type="text" name="balance" placeholder="Enter Balance" class="form-control"/>
