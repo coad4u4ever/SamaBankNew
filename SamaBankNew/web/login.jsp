@@ -59,6 +59,7 @@
         </style>
         <title>SAMA Bank</title>
     <body>
+        
         <div class="container-fluid">
             <div class="form-signin">
                 <h2 class="form-signin-heading">Sama Banking</h2>
@@ -80,6 +81,7 @@
                     <input type="submit" class="btn btn-lg btn-primary btn-block" value="Login"/>
                 </form>
                 Don't have an account? <a href='signup'>Sign Up</a> here!
+                
             </div>
         </div>
     </body>
