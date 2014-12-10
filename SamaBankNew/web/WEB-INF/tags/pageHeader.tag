@@ -30,7 +30,7 @@
                     </c:when>
                     <c:otherwise>
                         <li>
-                            <a href="SearchBankAccount?para=${user=='Admin'?'':user.getAccountId()}">${user=='Admin'?user:user.getAccountName()}</a>
+                            <a href="SearchBankAccount?para=${user=='Admin'?'':user.id}">${user=='Admin'?user:user.fname}</a>
                         </li>
                         <li>                   
                             <a href="Logout" title = "Logout form SAMA BANK">Logout</a>

@@ -62,10 +62,10 @@
         <div class="container-fluid">
             <div class="form-signin">
                 <h2 class="form-signin-heading">Sama Banking</h2>
-                <form action="login" method="POST">
+                <form action="Login" method="POST">
                     <div class="login-form">
                         <div class="form-group">
-                            <input type="text" class="form-control login-field" value="" placeholder="Enter user ID" id="login-name" name="accountId"/>
+                            <input type="text" class="form-control login-field" value="" placeholder="Enter user ID" id="login-name" name="id"/>
                             <label class="login-field-icon fui-user" for="login-name"></label>
                         </div>
                         <div class="form-group">
