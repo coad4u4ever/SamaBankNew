@@ -1,6 +1,7 @@
 package Test;
 
 import Models.BankAccount;
+import Models.Branch;
 import Models.Transaction;
 import java.util.List;
 import java.util.function.Consumer;
@@ -30,11 +31,17 @@ public class TestDBConnection {
          });      
          long t = 100200300;
          Transaction.createTransaction(t, "DEPO", 500.00);            
+       
+         BankAccount ba = BankAccount.findAccountByAccountID(100200300);
+         ba.transfer(100200301, 50);
+         
+        
+         List<Branch> l = Branch.getAllBranchId();
+         for(Branch i : l){
+         System.out.println(i.getBranchId());
+         System.out.println(i.getBranchName());
+         }
          */
-
-        BankAccount ba = BankAccount.findAccountByAccountID(100200300);
-        ba.transfer(100200301, 50);
-
     }
 
 }
