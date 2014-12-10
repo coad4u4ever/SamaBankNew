@@ -73,13 +73,10 @@
                             <label class="login-field-icon fui-lock" for="login-pass"></label>
                         </div>
                     </div>
-                    <label>
-                        <input type="checkbox" name="remember"/> Remember Me
-                    </label>
-
                     <input type="submit" class="btn btn-lg btn-primary btn-block" value="Login"/>
                 </form>
-                Don't have an account? <a href='signup'>Sign Up</a> here!
+                <br>
+                Don't have an account? <a href='signup.jsp'><font size="5"><strong>Sign Up</strong></font></a> here!
             </div>
         </div>
     </body>

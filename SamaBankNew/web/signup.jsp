@@ -32,7 +32,7 @@
     </head>
     <body>
         <info:pageHeader title="Sign Up"/>
-        <div class="container-fluid">
+        <div class="container-fluid" >
             
             <form action="signup" method="POST" class="form-group">
                 <h1 class="h1">Sign Up</h1>

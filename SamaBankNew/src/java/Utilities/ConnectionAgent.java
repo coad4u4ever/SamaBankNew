@@ -43,9 +43,7 @@ public class ConnectionAgent {
         try {
             Class.forName(DRIVER);
             conn = DriverManager.getConnection(URL, USER, PASSWORD);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ConnectionAgent.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ConnectionAgent.class.getName()).log(Level.SEVERE, null, ex);
         }
 
