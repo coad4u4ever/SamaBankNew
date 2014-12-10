@@ -29,7 +29,7 @@ public class Login extends HttpServlet {
             String realPassword = ba.getPassword();
             if (password.equals(realPassword)) {
                 HttpSession s = request.getSession();
-                s.setAttribute("bankuser", ba);
+                s.setAttribute("user", ba);
                 s.setMaxInactiveInterval(60*60*24*7);
                 getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
             } else {

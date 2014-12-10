@@ -18,7 +18,7 @@ public class Logout extends HttpServlet {
             throws ServletException, IOException {
 
         HttpSession s = request.getSession();
-        if (s.getAttribute("bankuser") != null) {
+        if (s.getAttribute("user") != null) {
             s.invalidate();
         }
         getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);

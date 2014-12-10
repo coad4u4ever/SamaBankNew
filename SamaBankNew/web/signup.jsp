@@ -55,6 +55,7 @@
                         <option value="${branch.branchName}">${branch.branchName}</option>
                         </c:forEach>
                     </select>
+                <br>
                 <input type="submit" class="btn btn-primary btn-lg" value="Sign In">
                 <input type="reset" class="btn btn-primary btn-lg" value="Reset">
                 <a onclick="history.back(-1)" ><input type="button" class="btn btn-primary btn-lg" value="Back"></a>
