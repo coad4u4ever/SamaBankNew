@@ -130,6 +130,24 @@ public class BankAccount implements Serializable {
         return ba;
     }
 
+    public static double getBalanceByAccountID(long accid) {
+        double balance = 0.0;
+        Connection con = ConnectionAgent.getConnection();
+        final String FIND_BALANCE_BY_ACCOUNT_ID_SQL = "SELECT BALANCE FROM BANKACCOUNT WHERE ACCOUNTID = ?";
+        try {
+            PreparedStatement psm = con.prepareStatement(FIND_BALANCE_BY_ACCOUNT_ID_SQL);
+            psm.setLong(1, accid);
+            ResultSet rs = psm.executeQuery();
+            if (rs.next()) {
+                balance = rs.getDouble(1);
+            }
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+            return -1;
+        }
+        return balance;
+    }
+
     public static BankAccount findAccountByAccountID(long test) {
         BankAccount ba = null;
         Connection con = ConnectionAgent.getConnection();
@@ -258,7 +276,7 @@ public class BankAccount implements Serializable {
             ResultSet rs = psm.executeQuery();
             while (rs.next()) {
                 ba = new BankAccount();
-                if(list==null){
+                if (list == null) {
                     list = new ArrayList<>();
                 }
                 getBankAccount(rs, ba);
