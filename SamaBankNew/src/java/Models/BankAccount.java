@@ -194,7 +194,8 @@ public class BankAccount implements Serializable {
             psm.setString(4, this.fname);
             psm.setString(5, this.lname);
             psm.setDouble(6, this.balance);
-            psm.setInt(7, this.branchId);
+            psm.setInt(7, this.accountType);
+            psm.setInt(8, this.branchId);
             int done = psm.executeUpdate();
             return done > 0;
         } catch (SQLException ex) {

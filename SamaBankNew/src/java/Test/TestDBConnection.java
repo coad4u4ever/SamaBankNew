@@ -41,6 +41,11 @@ public class TestDBConnection {
          System.out.println(i.getBranchId());
          System.out.println(i.getBranchName());
          }
+         
+        
+         String s = "45";
+         double d = Double.parseDouble(s);
+         System.out.println(d+2);
          */
     }
 

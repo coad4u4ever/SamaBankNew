@@ -77,7 +77,7 @@
                     <input type="submit" class="btn btn-lg btn-primary btn-block" value="Login"/>
                 </form>
                 <br>
-                Don't have an account? <a href='signup.jsp'><font size="5"><strong>Sign Up</strong></font></a> here!
+                Don't have an account? <a href='SignUp'><font size="5"><strong>Sign Up</strong></font></a> here!
             </div>
         </div>
     </body>

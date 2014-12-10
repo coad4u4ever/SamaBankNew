@@ -33,6 +33,7 @@ public class Authentication implements Filter {
         HttpServletResponse rp = (HttpServletResponse) response;
         HttpServletRequest rq= (HttpServletRequest)request;
         if (s.getAttribute("user") == null) {
+            System.out.println("33333");
             rp.sendRedirect(rq.getContextPath()+"/login.jsp");
             return;
         } else {
