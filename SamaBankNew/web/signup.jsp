@@ -49,8 +49,8 @@
                         <option value="saving">Saving Account</option>
                         <option value="fixed">Fixed Deposit Account</option>
                     </select>
-                <label>Branch ID:</label>
-                    <select class="form-control" name="accounttype">
+                <label>Branch:</label>
+                    <select class="form-control" name="branch">
                         <c:forEach var="branch" items="${branch}">
                         <option value="${branch.branchName}">${branch.branchName}</option>
                         </c:forEach>

@@ -28,6 +28,13 @@
                 border-radius: 15px;
                 background-color: #ecf0f1;
             }
+            
+                        #main{
+                
+                padding: 30px;
+                border-radius: 15px;
+                background-color: #95a5a6;
+            }
         </style>
         
    
@@ -35,18 +42,27 @@
     <body>
         <info:pageHeader title="Edit User"/>
         <div class="container-fluid">
-            
+                        <div id="main">
+        <nav class="navbar navbar-default">
+        
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="viewdata">View User Data</a></li>
+                    <li><a href="withdraw">Withdraw</a></li>
+                    <li><a href="deposit">Deposit</a></li>
+                    <li><a href="transfer">Transfer</a></li>
+                </ul>
+            </nav>
             <form action="signup" method="POST" class="form-group">
-                <h1 class="h1">Sign Up Account</h1>
+                <h1 class="h1">Edit User</h1>
                 <!--<label>Account ID: </label><input type="text" name="id" value="Auto Number" readonly class="form-control"/>-->
                 <!--<label>User ID: </label><input type="text" name="accountid" placeholder="Enter User ID" class="form-control"/>-->
                 <label>Password: </label><input type="password" name="password" placeholder="Enter Password" class="form-control"/>
                 <label>Re-Password: </label><input type="password" name="Repassword" placeholder="Enter Password Again" class="form-control"/>
                 
-                <label>First Name:</label><input type="text" name="fname" placeholder="Enter First Name" class="form-control"/>
-                <label>Last Name:</label><input type="text" name="lname" placeholder="Enter Last Name" class="form-control"/>
-                <label>Branch ID:</label>
-                    <select class="form-control" name="accounttype">
+                <label>First Name:</label><input type="text" name="fname" placeholder="Enter First Name" class="form-control" value="${user.fname}"/>
+                <label>Last Name:</label><input type="text" name="lname" placeholder="Enter Last Name" class="form-control" value="${user.lname}"/>
+                <label>Branch:</label>
+                    <select class="form-control" name="branch">
                         <c:forEach var="branch" items="${branch}">
                         <option value="${branch.branchName}">${branch.branchName}</option>
                         </c:forEach>
@@ -55,6 +71,7 @@
                 <input type="reset" class="btn btn-primary btn-lg" value="Reset">
                 <a onclick="history.back(-1)" ><input type="button" class="btn btn-primary btn-lg" value="Back"></a>
             </form>
+                        </div>
         </div>
     </body>
 </html>

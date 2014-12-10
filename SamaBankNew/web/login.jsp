@@ -59,6 +59,7 @@
         </style>
         <title>SAMA Bank</title>
     <body>
+        
         <div class="container-fluid">
             <div class="form-signin">
                 <h2 class="form-signin-heading">Sama Banking</h2>
