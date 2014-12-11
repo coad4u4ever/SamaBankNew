@@ -49,6 +49,7 @@
                     <li><a href="withdraw">Withdraw</a></li>
                     <li><a href="deposit">Deposit</a></li>
                     <li class="active"><a href="transfer">Transfer</a></li>
+                    <li><a href="showtransaction">Show Transaction</a></li>
                 </ul>
             </nav>
             <form action="deposit" method="POST" class="form-group">

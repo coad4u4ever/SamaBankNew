@@ -46,6 +46,7 @@
                     <li><a href="withdraw">Withdraw</a></li>
                     <li><a href="deposit">Deposit</a></li>
                     <li><a href="transfer">Transfer</a></li>
+                    <li><a href="showtransaction">Show Transaction</a></li>
                 </ul>
             </nav>
             
