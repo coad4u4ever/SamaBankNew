@@ -14,6 +14,28 @@
                 <link rel="stylesheet" href="assets/dist/css/flat-ui.min.css"/>
         <link rel="stylesheet" href="assets/dist/js/flat-ui.js"/>
         <link rel="stylesheet" href="assets/dist/css/vendor/bootstrap.min.css"/>
+        <style>
+                        body{
+                padding: 100px;
+                padding-top: 10px;
+                padding-left: 100px;
+                background-color: #2ecc71;
+            }
+            .form-group{
+                max-width: 600px;
+                padding: 20px;
+                border-radius: 15px;
+                background-color: #ecf0f1;
+            }
+            
+            #main{
+                
+                padding: 30px;
+                border-radius: 15px;
+                background-color: #95a5a6;
+            }
+            
+        </style>
     </head>
     <body>
         <info:pageHeader title="Withdraw"/>
