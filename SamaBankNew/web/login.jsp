@@ -29,11 +29,11 @@
                     <form action="Login" method="POST">
                         <div class="login-form lif">
                             <div class="form-group">
-                                <input type="text" class="form-control login-field" value="" placeholder="Enter user ID" id="login-name" name="id"/>
+                                <input type="text" class="form-control login-field" value="" required placeholder="Enter user ID" id="login-name" name="id"/>
                                 <label class="login-field-icon fui-user" for="login-name"></label>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control login-field" value="" placeholder="Password" id="login-pass" name="password"/>
+                                <input type="password" class="form-control login-field" value="" required placeholder="Password" id="login-pass" name="password"/>
                                 <label class="login-field-icon fui-lock" for="login-pass"></label>
                             </div>
                         </div>
