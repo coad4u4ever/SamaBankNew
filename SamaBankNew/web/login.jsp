@@ -12,69 +12,12 @@
         <link rel="stylesheet" href="assets/dist/css/flat-ui.min.css"/>
         <link rel="stylesheet" href="assets/dist/js/flat-ui.js"/>
         <link rel="stylesheet" href="assets/dist/css/vendor/bootstrap.min.css"/>
-        <style>
-            body {
-
-               
-                background-color: #2ecc71;
-                
-            }
-
-            .form-signin {
-                width: 716px;
-                height: 550px;
-                padding: 15px;
-                margin: 0 auto;
-                background-color: #95a5a6;
-                margin-top:5%;
-                border-radius:8px;
-
-            }
-            .form-signin .form-signin-heading,
-            .form-signin .checkbox {
-                margin-bottom: 10px;
-            }
-            .form-signin .checkbox {
-                font-weight: normal;
-            }
-            .form-signin .form-control {
-                position: relative;
-                height: auto;
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
-                box-sizing: border-box;
-                padding: 10px;
-                font-size: 16px;
-            }
-            .form-signin .form-control:focus {
-                z-index: 2;
-            }
-            .form-signin input[type="email"] {
-                margin-bottom: -1px;
-                border-bottom-right-radius: 0;
-                border-bottom-left-radius: 0;
-            }
-            .form-signin input[type="password"] {
-                margin-bottom: 10px;
-                border-top-left-radius: 0;
-                border-top-right-radius: 0; 
-            }
-
-            h1 {
-                background-color: black;
-                width: 100%;
-                margin: inherit;
-
-
-            }
-
-
-        </style>
+        <link rel="stylesheet" href="assets/dist/css/mystyle.css"/>
         <title>SAMA Bank</title>
     <body style="background-image: url(assets/img/bg/bg.jpg);">
 
         <div class="container-fluid">
-            <div class="form-signin" style="background-color: rgba(111,111,111,0.5);">
+            <div class="form-signin fsi">
                 <div style="width:716;height: 220px;">
                     <img src="assets/img/icons/png/LogoSama.png" width="150" style="display: block;margin:auto"/>
                     <h2 class="form-signin-heading" style="text-align: center">Sama Banking</h2>
