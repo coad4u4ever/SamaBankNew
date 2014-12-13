@@ -76,5 +76,6 @@
             </form>
                         </div>
         </div>
+                 <info:footer/>
     </body>
 </html>

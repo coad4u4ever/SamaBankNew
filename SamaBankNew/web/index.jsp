@@ -59,5 +59,6 @@
             
         
         </div>
+        <info:footer/>
     </body>
 </html>

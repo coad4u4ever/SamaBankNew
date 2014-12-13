@@ -62,5 +62,6 @@
                 <h3 style="color: #c0392b">${msg}</h3>
         </div>
     </div>
+        <info:footer/>
     </body>
 </html>
