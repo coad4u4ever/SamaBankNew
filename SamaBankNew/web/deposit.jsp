@@ -40,14 +40,14 @@
     </head>
     <body>
         <info:pageHeader title="Deposit"/>
-        <div class="container-fluid" align="center">
-            <div id="main">
+        <div class="container-fluid" align="center" width ="76%" style ="padding: 0;margin: 0 ;border-radius: 100px 100px 0px 0px" >
+            <div id="main"style ="border-radius: 10px 10px 0px 0px" >
                 <nav class="navbar navbar-default">
 
                     <ul class="nav navbar-nav">
-                        <li><a href="viewdata">View User Data</a></li>
+                        <li class="active"><a href="viewdata">View User Data</a></li>
                         <li><a href="withdraw">Withdraw</a></li>
-                        <li class="active"><a href="deposit">Deposit</a></li>
+                        <li><a href="deposit">Deposit</a></li>
                         <li><a href="transfer">Transfer</a></li>
                         <li><a href="showtransaction">Show Transaction</a></li>
                     </ul>
@@ -63,6 +63,6 @@
                 <h3 style="color: #c0392b">${msg}</h3>
             </div>
         </div>
-            <info:footer/>
+        <info:footer/>
     </body>
 </html>

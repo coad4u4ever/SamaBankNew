@@ -37,20 +37,20 @@
         </style>
     </head>
     <body>
-    <info:pageHeader title="Edit User"/>
-    <div class="container-fluid">
-        <div id="main">
-            <nav class="navbar navbar-default">
+        <info:pageHeader title="Show User Info"/>
+        <div class="container-fluid" align="center" width ="76%" style ="padding: 0;margin: 0 ;border-radius: 100px 100px 0px 0px" >
+            <div id="main"style ="border-radius: 10px 10px 0px 0px" >
+                <nav class="navbar navbar-default">
 
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="viewdata">View User Data</a></li>
-                    <li><a href="withdraw">Withdraw</a></li>
-                    <li><a href="deposit">Deposit</a></li>
-                    <li><a href="transfer">Transfer</a></li>
-                    <li><a href="showtransaction">Show Transaction</a></li>
-                </ul>
-            </nav>
-            
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="viewdata">View User Data</a></li>
+                        <li><a href="withdraw">Withdraw</a></li>
+                        <li><a href="deposit">Deposit</a></li>
+                        <li><a href="transfer">Transfer</a></li>
+                        <li><a href="showtransaction">Show Transaction</a></li>
+                    </ul>
+                </nav>
+
                 <h1 class="h1">Show User</h1>
 
                 <label>First Name:</label><input type="text" name="fname" class="form-control" value="${user.fname}" readonly/>
@@ -60,9 +60,9 @@
                 <label>Branch:</label><input type="text" name="branch" class="form-control" value="${user.branchName}" readonly/>
                 <br>
                 <p style="text-align: right"><a href="Edit" ><input type="button" class="btn btn-primary btn-lg" value="Edit"></a></p>
-           
+
+            </div>
         </div>
-    </div>
-                <info:footer/>
-</body>
+        <info:footer/>
+    </body>
 </html>

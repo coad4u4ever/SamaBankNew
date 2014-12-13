@@ -38,7 +38,8 @@
                         
                         </div>
                         <br>
-                        <hr>
+                        <div style ="width: 80%"><hr></div>
+                        
                     <p style="color:white;text-align: left">© 2014 SIT KMUTT All rights reserved</p>
                         
                         
