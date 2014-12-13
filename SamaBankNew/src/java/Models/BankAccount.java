@@ -223,7 +223,7 @@ public class BankAccount implements Serializable {
         }
     }
 
-    public boolean deposite(double money) {
+    public boolean deposit(double money) {
         //final String GET_OLD_MONEY_SQL = "SELECT BALANCE FROM BANKACCOUNT WHERE ACCOUNTID = ?";
         final String DEPOSITE_MONEY_SQL = "UPDATE BANKACCOUNT SET BALANCE = ? WHERE ACCOUNTID = ?";
         double oldMoney = getBalanceByAccountID(this.accountId);
@@ -267,7 +267,7 @@ public class BankAccount implements Serializable {
     public boolean transfer(long accountIdDestination, double money) {
         Connection con = ConnectionAgent.getConnection();
         BankAccount ba = BankAccount.findAccountByAccountID(accountIdDestination);
-        if (withdraw(money) && ba.deposite(money)) {
+        if (withdraw(money) && ba.deposit(money)) {
             Transaction.createTransaction(this.accountId, "OFER", money);
             Transaction.createTransaction(accountIdDestination, "RECR", money);
             return true;

@@ -22,6 +22,10 @@
         <servlet-name>SignUp</servlet-name>
         <servlet-class>Servlets.SignUp</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Withdraw</servlet-name>
+        <servlet-class>Servlets.Withdraw</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -33,6 +37,10 @@
     <servlet-mapping>
         <servlet-name>SignUp</servlet-name>
         <url-pattern>/SignUp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Withdraw</servlet-name>
+        <url-pattern>/Withdraw</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
