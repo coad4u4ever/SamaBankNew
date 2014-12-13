@@ -34,6 +34,13 @@
     </head>
     <body>
         <info:pageHeader title="Sign Up"/>
+  
+        <div style="float : left">
+           <p style="margin-top:auto ">
+            <img src = "assets/img/samabank.png" width="350" height="250" border="1">
+           </p>
+           </div>
+        
         <div class="container-fluid" align="right" >
             <form action="SignUp" method="POST" class="form-group">
                <h1 align='center' class="h1">Sign Up  <font color="red"> ${msgSave}</font></h1>

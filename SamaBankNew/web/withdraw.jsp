@@ -39,7 +39,7 @@
     </head>
     <body>
         <info:pageHeader title="Withdraw"/>
-    <div class="container-fluid">
+    <div class="container-fluid" align='center'>
         <div id="main">
             <nav class="navbar navbar-default">
 
@@ -52,7 +52,7 @@
                 </ul>
             </nav>
             <form action="withdraw" method="POST" class="form-group">
-                <h1 class="h1">Withdraw</h1>
+                <h1 align='center' class="h1">Withdraw</h1>
                 <label>Account Type:</label><input type="text" name="branch" class="form-control" value="${user.accType}" readonly/>
                 <label>Balance:</label><input type="text" name="balance" class="form-control" value="${user.balance}" readonly/>
                 <label>Money Amount to Withdraw:</label><input type="text" name="withdraw" class="form-control"/>
