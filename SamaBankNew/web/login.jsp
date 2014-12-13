@@ -14,8 +14,8 @@
         <link rel="stylesheet" href="assets/dist/css/vendor/bootstrap.min.css"/>
         <link rel="stylesheet" href="assets/dist/css/mystyle.css"/>
         <title>SAMA Bank</title>
-    <body style="background-image: url(assets/img/bg/bg.jpg);">
-
+    
+    <body style="background-image: url(assets/dist/img/login/bg.jpg);">
         <div class="container-fluid">
             <div class="form-signin fsi">
                 <div style="width:716;height: 220px;">
@@ -26,7 +26,7 @@
                 <hr>
                 <div style="width:500px;margin: auto">
                     <form action="Login" method="POST">
-                        <div class="login-form">
+                        <div class="login-form lif">
                             <div class="form-group">
                                 <input type="text" class="form-control login-field" value="" placeholder="Enter user ID" id="login-name" name="id"/>
                                 <label class="login-field-icon fui-user" for="login-name"></label>

@@ -23,7 +23,7 @@ and open the template in the editor.
                 margin: 0 auto;
                 background-color: #95a5a6;
                 margin-top:5%;
-                border-radius:8px;
+                
 
             }
             .form-signin .form-signin-heading,
@@ -65,6 +65,13 @@ and open the template in the editor.
             }
 
             .fsi{
-              background-color: rgba(111,111,111,0.5);  
+              background-color: rgba(255,255,255,0.3);
+              color:black;
+              border-radius: 8px;
+            }
+            .lif{
+                border-radius: 0px;
+                border-top-right-radius: 8px;
+                border-top-left-radius: 8px;
             }
       
