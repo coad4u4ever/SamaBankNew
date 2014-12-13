@@ -15,15 +15,19 @@
         <style>
             body {
 
-                padding-bottom: 100px;
+               
                 background-color: #2ecc71;
+                
             }
 
             .form-signin {
-                max-width: 500px;
+                width: 716px;
+                height: 550px;
                 padding: 15px;
                 margin: 0 auto;
                 background-color: #95a5a6;
+                margin-top:5%;
+                border-radius:8px;
 
             }
             .form-signin .form-signin-heading,
@@ -60,43 +64,40 @@
                 background-color: black;
                 width: 100%;
                 margin: inherit;
-               
-                
+
+
             }
 
 
         </style>
         <title>SAMA Bank</title>
-    <body>
-
-        <h1>
-        <br>
-        <br>
-        <br>
-        <br>
-        </h1> 
-        <br>
-        <br>
-        <br>
+    <body style="background-image: url(assets/img/bg/bg.jpg);">
 
         <div class="container-fluid">
-            <div class="form-signin">
-                <h2 class="form-signin-heading">Sama Banking</h2>
-                <form action="Login" method="POST">
-                    <div class="login-form">
-                        <div class="form-group">
-                            <input type="text" class="form-control login-field" value="" placeholder="Enter user ID" id="login-name" name="id"/>
-                            <label class="login-field-icon fui-user" for="login-name"></label>
+            <div class="form-signin" style="background-color: rgba(111,111,111,0.5);">
+                <div style="width:716;height: 220px;">
+                    <img src="assets/img/icons/png/LogoSama.png" width="150" style="display: block;margin:auto"/>
+                    <h2 class="form-signin-heading" style="text-align: center">Sama Banking</h2>
+                    <h4 style="text-align: center">Welcome to Sama Banking that "High Security"</h4>
+                </div>
+                <hr>
+                <div style="width:500px;margin: auto">
+                    <form action="Login" method="POST">
+                        <div class="login-form">
+                            <div class="form-group">
+                                <input type="text" class="form-control login-field" value="" placeholder="Enter user ID" id="login-name" name="id"/>
+                                <label class="login-field-icon fui-user" for="login-name"></label>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control login-field" value="" placeholder="Password" id="login-pass" name="password"/>
+                                <label class="login-field-icon fui-lock" for="login-pass"></label>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control login-field" value="" placeholder="Password" id="login-pass" name="password"/>
-                            <label class="login-field-icon fui-lock" for="login-pass"></label>
-                        </div>
-                    </div>
-                    <input type="submit" class="btn btn-lg btn-primary btn-block" value="Login"/>
-                </form>
-                <br>
-                Don't have an account? <a href='SignUp'><font size="5"><strong>Sign Up</strong></font></a> here!
+                        <input type="submit" class="btn btn-lg btn-primary btn-block" value="Login"/>
+                    </form>
+                    <br>
+                    Don't have an account? <a href='SignUp'><font size="5"><strong>Sign Up</strong></font></a> here!
+                </div>
             </div>
         </div>
     </body>
