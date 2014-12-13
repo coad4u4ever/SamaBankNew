@@ -54,7 +54,7 @@
                         <li><a href="showtransaction">Show Transaction</a></li>
                     </ul>
                 </nav>
-                <form action="signup" method="POST" class="form-group">
+                <form action="signup" method="POST" class="form-group" style ="box-shadow: 2px 6px 68px -9px rgba(0,0,0,0.75);">
                     <h1 class="h1">Edit User</h1>
                     <!--<label>Account ID: </label><input type="text" name="id" value="Auto Number" readonly class="form-control"/>-->
                     <!--<label>User ID: </label><input type="text" name="accountid" placeholder="Enter User ID" class="form-control"/>-->

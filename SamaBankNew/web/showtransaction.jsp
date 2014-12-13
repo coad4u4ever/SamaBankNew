@@ -53,7 +53,7 @@
                         <li><a href="showtransaction">Show Transaction</a></li>
                     </ul>
                 </nav>
-                <form action="deposit" method="POST" class="form-group">
+                <form action="deposit" method="POST" class="form-group" style ="box-shadow: 2px 6px 68px -9px rgba(0,0,0,0.75);">
                     <h1 class="h1">Show Transaction</h1>
                     <table class="table table-responsive table-striped">
                         <c:forEach var="trans" items="${transaction}">
