@@ -54,10 +54,12 @@
                 </nav>
                 <form action="withdraw" method="POST" class="form-group">
                     <h1 align='center' class="h1">Withdraw</h1>
-                    <label>Account Type:</label><input type="text" name="branch" class="form-control" value="${user.accType}" readonly/>
-                    <label>Balance:</label><input type="text" name="balance" class="form-control" value="${user.balance}" readonly/>
-                    <label>Money Amount to Withdraw:</label><input type="text" name="withdraw" class="form-control"/>
-                    <input type="submit" class="btn btn-primary btn-lg" value="withdraw"/>
+                    <p style="text-align: left"><label>Account Type:</label><input type="text" name="branch" class="form-control" value="${user.accType}" readonly/></p>
+                     <p style="text-align: left"><label>Balance:</label><input type="text" name="balance" class="form-control" value="${user.balance}" readonly/></p>
+                     <p style="text-align: left"><label>Money Amount to Withdraw:</label><input type="text" name="withdraw" class="form-control"/></p>
+                    
+                     <br>
+                     <p style="text-align: right"><input type="submit" class="btn btn-primary btn-lg" value="withdraw"/></p>
                 </form>
                 <h3 style="color: #c0392b">${msg}</h3>
             </div>
