@@ -32,23 +32,37 @@ public class Deposit extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String depositamount = request.getParameter("depositamount");
         HttpSession s = request.getSession();
-        BankAccount ba = (BankAccount)s.getAttribute("user");
-        String money = request.getParameter("deposit");
-        if(Checker.isDouble(money)){
-            boolean isSuccess = ba.deposit(Double.parseDouble(money));
-            if(isSuccess){
-                request.setAttribute("msg","Deposit Successful.");
-            }else{
-                request.setAttribute("msg","Deposit Failed!");
-            }
-        }else{
-            request.setAttribute("msg","It's not a number!");
+        BankAccount ba = (BankAccount) s.getAttribute("user");
+        if (depositamount == null) {
+            getServletContext().getRequestDispatcher("/deposit.jsp").forward(request, response);
+            return;
         }
-        getServletContext().getRequestDispatcher("/deposit.jsp").forward(request, response);
+        String msg = "";
+        if (Utilities.Checker.isDouble(depositamount)) {
+            System.out.println(ba.getBalance());
+            if (ba.deposit(Double.parseDouble(depositamount))) {
+                ba.setBalance(BankAccount.getBalanceByAccountID(ba.getAccountId()));
+                s.setAttribute("user", ba);
+                System.out.println(ba.getBalance());
+                msg = "Deposit complete";
+                request.setAttribute("msg", msg);
+                getServletContext().getRequestDispatcher("/deposit.jsp").forward(request, response);
+            } else {
+                msg = "Deposit error";
+                request.setAttribute("msg", msg);
+                getServletContext().getRequestDispatcher("/deposit.jsp").forward(request, response);
+            }
+        } else {
+            msg = "Invalid amount";
+            request.setAttribute("msg", msg);
+            getServletContext().getRequestDispatcher("/deposit.jsp").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+
     /**
      * Handles the HTTP <code>GET</code> method.
      *
