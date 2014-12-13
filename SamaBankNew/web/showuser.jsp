@@ -57,7 +57,8 @@
                 <label>Balance:</label><input type="text" name="balance" class="form-control" value="${user.balance}" readonly/>
                 <label>Account Type:</label><input type="text" name="branch" class="form-control" value="${user.accType}" readonly/>
                 <label>Branch:</label><input type="text" name="branch" class="form-control" value="${user.branchName}" readonly/>
-                <a href="Edit" ><input type="button" class="btn btn-primary btn-lg" value="Edit"></a>
+                <br>
+                <p style="text-align: right"><a href="Edit" ><input type="button" class="btn btn-primary btn-lg" value="Edit"></a></p>
            
         </div>
     </div>
