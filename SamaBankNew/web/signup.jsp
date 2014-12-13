@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="assets/dist/css/flat-ui.min.css"/>
         <link rel="stylesheet" href="assets/dist/js/flat-ui.js"/>
         <link rel="stylesheet" href="assets/dist/css/vendor/bootstrap.min.css"/>
+        <link rel="shortcut icon" href="assets/dist/img/icons/icon.jpg" />
         <style>
             body{
                 padding: 100px;
