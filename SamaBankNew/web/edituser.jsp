@@ -41,7 +41,7 @@
     </head>
     <body>
         <info:pageHeader title="Edit User"/>
-        <div class="container-fluid">
+        <div class="container-fluid" align="center">
                         <div id="main">
         <nav class="navbar navbar-default">
         
@@ -56,20 +56,22 @@
                 <h1 class="h1">Edit User</h1>
                 <!--<label>Account ID: </label><input type="text" name="id" value="Auto Number" readonly class="form-control"/>-->
                 <!--<label>User ID: </label><input type="text" name="accountid" placeholder="Enter User ID" class="form-control"/>-->
-                <label>Password: </label><input type="password" name="password" placeholder="Enter Password" class="form-control"/>
-                <label>Re-Password: </label><input type="password" name="Repassword" placeholder="Enter Password Again" class="form-control"/>
+                <p style="text-align: left"><label>Password: </label><input type="password" name="password" placeholder="Enter Password" class="form-control"/></p>
+                 <p style="text-align: left"><label>Re-Password: </label><input type="password" name="Repassword" placeholder="Enter Password Again" class="form-control"/></p>
                 
-                <label>First Name:</label><input type="text" name="fname" placeholder="Enter First Name" class="form-control" value="${user.fname}"/>
-                <label>Last Name:</label><input type="text" name="lname" placeholder="Enter Last Name" class="form-control" value="${user.lname}"/>
-                <label>Branch:</label>
+                 <p style="text-align: left"><label>First Name:</label><input type="text" name="fname" placeholder="Enter First Name" class="form-control" value="${user.fname}"/></p>
+                 <p style="text-align: left"><label>Last Name:</label><input type="text" name="lname" placeholder="Enter Last Name" class="form-control" value="${user.lname}"/></p>
+                 <p style="text-align: left"><label>Branch:</label></p>
                     <select class="form-control" name="branch">
                         <c:forEach var="branch" items="${branch}">
                         <option value="${branch.branchName}">${branch.branchName}</option>
                         </c:forEach>
                     </select>
-                <input type="submit" class="btn btn-primary btn-lg" value="Edit">
-                <input type="reset" class="btn btn-primary btn-lg" value="Reset">
-                <a onclick="history.back(-1)" ><input type="button" class="btn btn-primary btn-lg" value="Back"></a>
+                <br><br>
+                <p style="text-align: right"><input type="submit" class="btn btn-primary btn-lg" value="Edit">&nbsp;
+                <input type="reset" class="btn btn-primary btn-lg" value="Reset">&nbsp;
+                <a onclick="history.back(-1)" ><input type="button" class="btn btn-primary btn-lg" value="Back">&nbsp;</a>
+                </p>
             </form>
                         </div>
         </div>

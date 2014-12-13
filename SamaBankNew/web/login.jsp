@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="assets/dist/css/vendor/bootstrap.min.css"/>
         <style>
             body {
-                padding-top: 100px;
+
                 padding-bottom: 100px;
                 background-color: #2ecc71;
             }
@@ -24,7 +24,7 @@
                 padding: 15px;
                 margin: 0 auto;
                 background-color: #95a5a6;
-                
+
             }
             .form-signin .form-signin-heading,
             .form-signin .checkbox {
@@ -53,13 +53,32 @@
             .form-signin input[type="password"] {
                 margin-bottom: 10px;
                 border-top-left-radius: 0;
-                border-top-right-radius: 0;
+                border-top-right-radius: 0; 
             }
-            
+
+            h1 {
+                background-color: black;
+                width: 100%;
+                margin: inherit;
+               
+                
+            }
+
+
         </style>
         <title>SAMA Bank</title>
     <body>
-        
+
+        <h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        </h1> 
+        <br>
+        <br>
+        <br>
+
         <div class="container-fluid">
             <div class="form-signin">
                 <h2 class="form-signin-heading">Sama Banking</h2>
