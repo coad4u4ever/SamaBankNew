@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="assets/dist/css/mystyle.css"/>
         <title>SAMA Bank</title>
     
-    <body style="background-image: url(assets/dist/img/login/bg.jpg);">
+    <body style="background-image: url(assets/dist/img/login/bg2.jpg);">
         <div class="container-fluid">
             <div class="form-signin fsi">
                 <div style="width:716;height: 220px;">
