@@ -27,8 +27,7 @@
                     <form method=post>
                         <br>
                         <img src="assets/img/icons/png/LogoSama.png"  width="74" style="display: block;float: left;margin: 20px"/> 
-                        <p style="color:white;text-align: left">© 2014 SIT KMUTT All rights reserved</p>
-                        <hr>
+                        
                         <div style="margin:auto;width: 80%;">
                             <p style ="float: left"><a href="http://internet1.customs.go.th/ext/Exchange/main_exchange.jsp" style ="color: white;text-decoration: none" onmouseover="xxx">::Exchange::&nbsp;&nbsp;&nbsp;</a></p>  
                             <p style ="float: left"><a href=http://marketdata.set.or.th/mkt/sectorialindices.do?country=TH&language=th" style ="color: white;text-decoration: none">::The Stock Exchange:: &nbsp;&nbsp;&nbsp; </a>  </p>
@@ -36,8 +35,13 @@
                             <p style ="float: left"><a href=http://www.matichon.co.th/business-finance.php style ="color: white;text-decoration: none">::เศรษฐกิจ::&nbsp;&nbsp;&nbsp; </a></p> 
                             <p style ="float: left"><a href=http://www.smesreport.com/main.php style ="color: white;text-decoration: none">::SME Business::&nbsp;&nbsp;&nbsp; </a> </p> 
                             <p style ="float: left"><a href=http://www.manager.co.th/iBizchannel/viewbrowse.aspx?browsenewsID=4461 style ="color: white;text-decoration: none">::Financial News::  </a></p> 
-            </div>
-
+                        
+                        </div>
+                        <br>
+                        <hr>
+                    <p style="color:white;text-align: left">© 2014 SIT KMUTT All rights reserved</p>
+                        
+                        
         </div>
 
     </body>
