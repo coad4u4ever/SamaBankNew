@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author toi
  */
-public class Withdraw extends HttpServlet {
+public class Deposit extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,23 +33,19 @@ public class Withdraw extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession s = request.getSession();
-        BankAccount ba = (BankAccount) s.getAttribute("user");
-        String money = request.getParameter("withdraw");
-        if (Checker.isDouble(money)) {
-            if (Double.parseDouble(money) > ba.getBalance()) {
-                request.setAttribute("msg", "Withdraw Failed! The money inputted is more than balance!");
-            } else {
-                boolean isSuccess = ba.withdraw(Double.parseDouble(money));
-                if (isSuccess) {
-                    request.setAttribute("msg", "Withdraw Successful.");
-                } else {
-                    request.setAttribute("msg", "Withdraw Failed! SQL Error!");
-                }
+        BankAccount ba = (BankAccount)s.getAttribute("user");
+        String money = request.getParameter("deposit");
+        if(Checker.isDouble(money)){
+            boolean isSuccess = ba.deposit(Double.parseDouble(money));
+            if(isSuccess){
+                request.setAttribute("msg","Deposit Successful.");
+            }else{
+                request.setAttribute("msg","Deposit Failed!");
             }
-        } else {
-            request.setAttribute("msg", "It's not a number!");
+        }else{
+            request.setAttribute("msg","It's not a number!");
         }
-        getServletContext().getRequestDispatcher("/withdraw.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/deposit.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
