@@ -16,28 +16,7 @@
         <link rel="stylesheet" href="assets/dist/js/flat-ui.js"/>
         <link rel="stylesheet" href="assets/dist/css/vendor/bootstrap.min.css"/>
         <link rel="shortcut icon" href="assets/dist/img/icons/icon.jpg" />
-        <style>
-            body{
-                padding: 100px;
-                padding-top: 10px;
-                padding-left: 100px;
-                background-color: #2ecc71;
-            }
-            .form-group{
-                max-width: 600px;
-                padding: 20px;
-                border-radius: 15px;
-                background-color: #ecf0f1;
-            }
-
-            #main{
-
-                padding: 30px;
-                border-radius: 15px;
-                background-color: #95a5a6;
-            }
-
-        </style>
+        <link rel="stylesheet" href="assets/dist/css/menus.css"/>
     </head>
     <body>
         <info:pageHeader title="Edit User"/>
