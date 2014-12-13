@@ -24,7 +24,7 @@ public class Login extends HttpServlet {
         if (ba == null) {
             msg = "Invalid ID";
             request.setAttribute("msg", msg);
-            getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/deposit.jsp").forward(request, response);
         } else {
             String realPassword = ba.getPassword();
             if (password.equals(realPassword)) {

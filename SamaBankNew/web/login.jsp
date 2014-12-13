@@ -13,8 +13,9 @@
         <link rel="stylesheet" href="assets/dist/js/flat-ui.js"/>
         <link rel="stylesheet" href="assets/dist/css/vendor/bootstrap.min.css"/>
         <link rel="stylesheet" href="assets/dist/css/mystyle.css"/>
+        <link rel="shortcut icon" href="assets/dist/img/icons/icon.jpg" />
         <title>SAMA Bank</title>
-    
+    </head>
     <body style="background-image: url(assets/dist/img/login/bg2.jpg);">
         <div class="container-fluid">
             <div class="form-signin fsi">
