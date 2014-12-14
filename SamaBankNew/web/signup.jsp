@@ -42,7 +42,7 @@
             </p>
         </div>
 
-        <div class="container-fluid" align="right"  >
+        <div class="container-fluid" align="center"  >
             <form action="SignUp" method="POST" class="form-group"style ="box-shadow: 2px 6px 68px -9px rgba(0,0,0,0.75);">
                 <h1 align='center' class="h1">Sign Up  <font color="red"> ${msgSave}</font></h1>
                 <p style="text-align: left"><label>Account ID: </label><input type="text" name="accountid" value="Auto Number" readonly class="form-control"/></p>

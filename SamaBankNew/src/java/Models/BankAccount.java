@@ -265,6 +265,9 @@ public class BankAccount implements Serializable {
     }
 
     public boolean transfer(long accountIdDestination, double money) {
+        if(money<=0){
+            return false;
+        }
         Connection con = ConnectionAgent.getConnection();
         BankAccount ba = BankAccount.findAccountByAccountID(accountIdDestination);
         if (withdraw(money) && ba.deposit(money)) {
@@ -283,6 +286,30 @@ public class BankAccount implements Serializable {
         final String GET_ALL_SQL = "SELECT * FROM BANKACCOUNT";
         try {
             PreparedStatement psm = con.prepareStatement(GET_ALL_SQL);
+            ResultSet rs = psm.executeQuery();
+            while (rs.next()) {
+                ba = new BankAccount();
+                if (list == null) {
+                    list = new ArrayList<>();
+                }
+                getBankAccount(rs, ba);
+                list.add(ba);
+            }
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return list;
+    }
+
+    public static List getAllAccountExceptParameter(long exception) {
+        BankAccount ba = null;
+        List<BankAccount> list = null;
+        Connection con = ConnectionAgent.getConnection();
+        final String GET_ALLex_SQL = "SELECT * FROM BANKACCOUNT WHERE ACCOUNTID != ?";
+        
+        try {
+            PreparedStatement psm = con.prepareStatement(GET_ALLex_SQL);
+            psm.setLong(1, exception);
             ResultSet rs = psm.executeQuery();
             while (rs.next()) {
                 ba = new BankAccount();

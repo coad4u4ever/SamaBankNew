@@ -41,7 +41,7 @@ public class Deposit extends HttpServlet {
         }
         String msg = "";
         if (Utilities.Checker.isDouble(depositamount)) {
-            System.out.println(ba.getBalance());
+
             if (ba.deposit(Double.parseDouble(depositamount))) {
                 ba.setBalance(BankAccount.getBalanceByAccountID(ba.getAccountId()));
                 s.setAttribute("user", ba);

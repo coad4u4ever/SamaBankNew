@@ -24,29 +24,20 @@
         <info:pageHeader title="Transfer"/>
         <div class="container-fluid" align="center" width ="76%" style ="padding: 0;margin: 0 ;border-radius: 100px 100px 0px 0px" >
             <div id="main"style ="border-radius: 10px 10px 0px 0px" >
-                <nav class="navbar navbar-default">
-
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="viewdata">View User Data</a></li>
-                        <li><a href="withdraw">Withdraw</a></li>
-                        <li><a href="deposit">Deposit</a></li>
-                        <li><a href="transfer">Transfer</a></li>
-                        <li><a href="showtransaction">Show Transaction</a></li>
-                    </ul>
-                </nav>
-                <form action="deposit" method="POST" class="form-group"style ="box-shadow: 2px 6px 68px -9px rgba(0,0,0,0.75);">
+                <info:navbarmenu activepoint="4"/>
+                <form action="Transfer" method="POST" class="form-group"style ="box-shadow: 2px 6px 68px -9px rgba(0,0,0,0.75);">
                     <h1 class="h1">Transfer</h1>
-                    <p style="text-align: left"><label>Account Type:</label><input type="text" name="branch" class="form-control" value="${user.accType}" readonly/></p>
+                    <p style="text-align: left"><label>Account ID:</label><input type="text" name="branch" class="form-control" value="${user.accountId}" readonly/></p>
                     <p style="text-align: left"><label>Balance:</label><input type="text" name="balance" class="form-control" value="${user.balance}" readonly/></p>
-                    <p style="text-align: left"><label>Money Amount to Transfer:</label><input type="text" name="withdraw" class="form-control"/></p>
+                    <p style="text-align: left"><label>Money Amount to Transfer:</label><input type="text" name="transferamount" class="form-control"/></p>
                     <p style="text-align: left"><label>Transfer To:</label></p>
-                    <select class="form-control" name="transferName">
-                        <c:forEach var="transfer" items="${transfer}">
-                            <option value="${transfer.transferName}">${transfer.transferName}</option>
+                    <select class="form-control" name="transferTo">
+                        <c:forEach var="transfer" items="${accountlists}">
+                            <option  value="${transfer.accountId}">${transfer.accountId}  ${transfer.fname}  ${transfer.lname}</option>
                         </c:forEach>
                     </select>
                     <br>
-                    <p style="text-align: right"><input type="submit" class="btn btn-primary btn-lg" value="deposit"/></p>
+                    <p style="text-align: right"><input type="submit" class="btn btn-primary btn-lg" value="transfer"/></p>
                 </form>
                 <h3 style="color: #c0392b">${msg}</h3>
             </div>

@@ -8,6 +8,14 @@
         <filter-name>Authentication</filter-name>
         <servlet-name>Withdraw</servlet-name>
         <servlet-name>Deposit</servlet-name>
+        <servlet-name>Transfer</servlet-name>
+        <servlet-name>ShowTransaction</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>Authentication</filter-name>
+        <url-pattern>/showuser.jsp</url-pattern>
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
@@ -31,6 +39,14 @@
         <servlet-name>Deposit</servlet-name>
         <servlet-class>Servlets.Deposit</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Transfer</servlet-name>
+        <servlet-class>Servlets.Transfer</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShowTransaction</servlet-name>
+        <servlet-class>Servlets.ShowTransaction</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -50,6 +66,14 @@
     <servlet-mapping>
         <servlet-name>Deposit</servlet-name>
         <url-pattern>/Deposit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Transfer</servlet-name>
+        <url-pattern>/Transfer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowTransaction</servlet-name>
+        <url-pattern>/ShowTransaction</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

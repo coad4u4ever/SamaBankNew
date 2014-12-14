@@ -9,6 +9,7 @@ import Models.BankAccount;
 import Utilities.Checker;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,9 +18,9 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author toi
+ * @author coad4u4ever
  */
-public class Withdraw extends HttpServlet {
+public class Transfer extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,54 +33,56 @@ public class Withdraw extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        /*
-         HttpSession s = request.getSession();
-         BankAccount ba = (BankAccount) s.getAttribute("user");
-         String money = request.getParameter("withdraw");
-         if (Checker.isDouble(money)) {
-         if (Double.parseDouble(money) > ba.getBalance()) {
-         request.setAttribute("msg", "Withdraw Failed! The money inputted is more than balance!");
-         } else {
-         boolean isSuccess = ba.withdraw(Double.parseDouble(money));
-         if (isSuccess) {
-         ba.setBalance(BankAccount.getBalanceByAccountID(ba.getAccountId()));
-         request.setAttribute("msg", "Withdraw Successful.");
-         } else {
-         request.setAttribute("msg", "Withdraw Failed! SQL Error!");
-         }
-         }
-         } else {
-         request.setAttribute("msg", "It's not a number!");
-         }
-         getServletContext().getRequestDispatcher(response.encodeURL("/withdraw.jsp")).forward(request, response);
-         */
-        String withdrawamount = request.getParameter("withdrawamount");
+        String transferamount = request.getParameter("transferamount");
+        String transfer = request.getParameter("transferTo");
         HttpSession s = request.getSession();
         BankAccount ba = (BankAccount) s.getAttribute("user");
-        if (withdrawamount == null) {
-            getServletContext().getRequestDispatcher("/withdraw.jsp").forward(request, response);
+        if (transfer == null) {
+            List accountlists = BankAccount.getAllAccountExceptParameter(ba.getAccountId());
+            s.setAttribute("accountlists", accountlists);
+            getServletContext().getRequestDispatcher("/transfer.jsp").forward(request, response);
             return;
         }
+
+        if (transferamount == null) {
+            List accountlists = BankAccount.getAllAccountExceptParameter(ba.getAccountId());
+            s.setAttribute("accountlists", accountlists);
+            getServletContext().getRequestDispatcher("/transfer.jsp").forward(request, response);
+            return;
+        }
+
         String msg = "";
-        if (Utilities.Checker.isDouble(withdrawamount)) {
-            
-            if (ba.withdraw(Double.parseDouble(withdrawamount))) {
-                ba.setBalance(BankAccount.getBalanceByAccountID(ba.getAccountId()));
-                s.setAttribute("user", ba);
-                System.out.println(ba.getBalance());
-                msg = "Withdraw complete";
+
+        if (Checker.isDouble(transferamount)) {
+            double transfermoney = Double.parseDouble(transferamount);
+            if (transfermoney <= 0.0) {
+                msg = "Invalid amount";
                 request.setAttribute("msg", msg);
-                getServletContext().getRequestDispatcher(response.encodeURL("/withdraw.jsp")).forward(request, response);
+                getServletContext().getRequestDispatcher(response.encodeURL("/transfer.jsp")).forward(request, response);
+
+            } else if (transfermoney > ba.getBalance()) {
+                msg = "Transfer more than your balance";
+                request.setAttribute("msg", msg);
+                getServletContext().getRequestDispatcher(response.encodeURL("/transfer.jsp")).forward(request, response);
             } else {
-                msg = "Withdraw error";
-                request.setAttribute("msg", msg);
-                getServletContext().getRequestDispatcher(response.encodeURL("/withdraw.jsp")).forward(request, response);
+                if (ba.transfer(Long.parseLong(transfer), transfermoney)) {
+                    ba.setBalance(BankAccount.getBalanceByAccountID(ba.getAccountId()));
+                    s.setAttribute("user", ba);
+                    msg = "Transfer complete";
+                    request.setAttribute("msg", msg);
+                    getServletContext().getRequestDispatcher(response.encodeURL("/transfer.jsp")).forward(request, response);
+                } else {
+                    msg = "Transfer Error";
+                    request.setAttribute("msg", msg);
+                    getServletContext().getRequestDispatcher(response.encodeURL("/transfer.jsp")).forward(request, response);
+                }
             }
         } else {
             msg = "Invalid amount";
             request.setAttribute("msg", msg);
-            getServletContext().getRequestDispatcher(response.encodeURL("/withdraw.jsp")).forward(request, response);
+            getServletContext().getRequestDispatcher(response.encodeURL("/transfer.jsp")).forward(request, response);
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

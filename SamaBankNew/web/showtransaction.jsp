@@ -22,16 +22,7 @@
         <info:pageHeader title="Edit User"/>
         <div class="container-fluid" align="center" width ="76%" style ="padding: 0;margin: 0 ;border-radius: 100px 100px 0px 0px" >
             <div id="main"style ="border-radius: 10px 10px 0px 0px" >
-                <nav class="navbar navbar-default">
-
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="viewdata">View User Data</a></li>
-                        <li><a href="withdraw">Withdraw</a></li>
-                        <li><a href="deposit">Deposit</a></li>
-                        <li><a href="transfer">Transfer</a></li>
-                        <li><a href="showtransaction">Show Transaction</a></li>
-                    </ul>
-                </nav>
+                <info:navbarmenu activepoint="5"/>
                 <form action="deposit" method="POST" class="form-group" style ="box-shadow: 2px 6px 68px -9px rgba(0,0,0,0.75);">
                     <h1 class="h1">Show Transaction</h1>
                     <table class="table table-responsive table-striped">
