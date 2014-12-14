@@ -6,8 +6,9 @@
 package Servlets;
 
 import Models.BankAccount;
+import Models.Transaction;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -31,13 +32,12 @@ public class ShowTransaction extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String withdrawamount = request.getParameter("withdrawamount");
         HttpSession s = request.getSession();
         BankAccount ba = (BankAccount) s.getAttribute("user");
-        if (withdrawamount == null) {
-            getServletContext().getRequestDispatcher("/showtransaction.jsp").forward(request, response);
-            return;
-        }
+        List transaction = Transaction.findAllTransactionByBankAccountID(ba.getAccountId());
+        request.setAttribute("transaction", transaction);
+        getServletContext().getRequestDispatcher("/showtransaction.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

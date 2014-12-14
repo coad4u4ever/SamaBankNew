@@ -265,16 +265,55 @@ public class BankAccount implements Serializable {
     }
 
     public boolean transfer(long accountIdDestination, double money) {
-        if(money<=0){
+        if (money <= 0) {
             return false;
         }
         Connection con = ConnectionAgent.getConnection();
         BankAccount ba = BankAccount.findAccountByAccountID(accountIdDestination);
-        if (withdraw(money) && ba.deposit(money)) {
-            Transaction.createTransaction(this.accountId, "OFER", money);
-            Transaction.createTransaction(accountIdDestination, "RECR", money);
+        if (transferOut(money) && ba.transferIn(money)) {
             return true;
         } else {
+            return false;
+        }
+    }
+
+    public boolean transferOut(double money) {
+        //final String GET_OLD_MONEY_SQL = "SELECT BALANCE FROM BANKACCOUNT WHERE ACCOUNTID = ?";
+        final String WITHDRAW_SQL = "UPDATE BANKACCOUNT SET BALANCE = ? WHERE ACCOUNTID = ?";
+
+        double oldMoney = getBalanceByAccountID(this.accountId);
+        if (money > oldMoney) {
+            return false;
+        } else {
+            try {
+                Connection con = ConnectionAgent.getConnection();
+                PreparedStatement psm = con.prepareStatement(WITHDRAW_SQL);
+                psm.setDouble(1, oldMoney - money);
+                psm.setLong(2, this.accountId);
+                int done = psm.executeUpdate();
+                Transaction.createTransaction(this.accountId, "TRAO", money);
+                return done > 0;
+            } catch (SQLException ex) {
+                System.out.println(ex);
+                return false;
+            }
+        }
+    }
+
+    public boolean transferIn(double money) {
+        //final String GET_OLD_MONEY_SQL = "SELECT BALANCE FROM BANKACCOUNT WHERE ACCOUNTID = ?";
+        final String DEPOSITE_MONEY_SQL = "UPDATE BANKACCOUNT SET BALANCE = ? WHERE ACCOUNTID = ?";
+        double oldMoney = getBalanceByAccountID(this.accountId);
+        try {
+            Connection con = ConnectionAgent.getConnection();
+            PreparedStatement psm = con.prepareStatement(DEPOSITE_MONEY_SQL);
+            psm.setDouble(1, oldMoney + money);
+            psm.setLong(2, this.accountId);
+            int done = psm.executeUpdate();
+            Transaction.createTransaction(this.accountId, "TRAI", money);
+            return done > 0;
+        } catch (SQLException ex) {
+            System.out.println(ex);
             return false;
         }
     }
@@ -306,7 +345,7 @@ public class BankAccount implements Serializable {
         List<BankAccount> list = null;
         Connection con = ConnectionAgent.getConnection();
         final String GET_ALLex_SQL = "SELECT * FROM BANKACCOUNT WHERE ACCOUNTID != ?";
-        
+
         try {
             PreparedStatement psm = con.prepareStatement(GET_ALLex_SQL);
             psm.setLong(1, exception);
