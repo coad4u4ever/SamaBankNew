@@ -47,6 +47,14 @@
         <servlet-name>ShowTransaction</servlet-name>
         <servlet-class>Servlets.ShowTransaction</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditUser</servlet-name>
+        <servlet-class>Servlets.EditUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditPassword</servlet-name>
+        <servlet-class>Servlets.EditPassword</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -74,6 +82,14 @@
     <servlet-mapping>
         <servlet-name>ShowTransaction</servlet-name>
         <url-pattern>/ShowTransaction</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditUser</servlet-name>
+        <url-pattern>/EditUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditPassword</servlet-name>
+        <url-pattern>/EditPassword</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

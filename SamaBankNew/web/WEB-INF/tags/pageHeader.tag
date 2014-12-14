@@ -22,15 +22,16 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li><a><b>Hello</b></a></li>
-                <c:choose>
-                    <c:when test = "${user==null}">
+                            <c:choose>
+                                <c:when test = "${user==null}">
                         <li>
                             <a href="login.jsp" title = "Login to SAMA BANK">Guest</a>
                         </li>
                     </c:when>
                     <c:otherwise>
                         <li>
-                            <a href="SearchBankAccount?para=${user=='Admin'?'':user.id}">${user=='Admin'?user:user.fname}</a>
+                            <a href="showuser.jsp">${user=='Admin'?user:user.fname}</a>
+                            <%--<a href="SearchBankAccount?para=${user=='Admin'?'':user.id}">${user=='Admin'?user:user.fname}</a>--%>
                         </li>
                         <li>                   
                             <a href="Logout" title = "Logout form SAMA BANK">Logout</a>

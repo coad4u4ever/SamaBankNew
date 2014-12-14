@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Edit User</title>
+        <title>User Info</title>
         <link rel="stylesheet" href="assets/dist/css/flat-ui.min.css"/>
         <link rel="stylesheet" href="assets/dist/js/flat-ui.js"/>
         <link rel="stylesheet" href="assets/dist/css/vendor/bootstrap.min.css"/>
@@ -32,7 +32,12 @@
                 <p style="text-align: left"><label>Account Type:</label><input type="text" name="branch" class="form-control" value="${user.accountType==1?'Saving Account':'Fixed Deposit Account'}" readonly style="color: black"/></p>
                 <!--<p style="text-align: left"><label>Branch:</label><input type="text" name="branch" class="form-control" value="" readonly style="color: black"/></p>-->
                 <br>
-                <p style="text-align: right"><a href="Edit" ><input type="button" class="btn btn-primary btn-lg" value="Edit"></a></p>
+
+                <p style="text-align: right"><a href="edituser.jsp" ><input type="submit" class="btn btn-primary btn-lg" value="Edit"></a></p>
+
+
+                <p style="text-align: right"><a href="editpassword.jsp" ><input type="submit" class="btn btn-primary btn-lg" value="Edit Password"></a></p>
+
 
             </div>
         </div>

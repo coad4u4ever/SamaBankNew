@@ -38,7 +38,7 @@
                     </nav>
                 </div>
             </div>
-            <div class="pageContent" style ="width: 100%;height: 470px">
+            <div class="pageContent" style ="width: 99%;height: 470px">
                 <div style ="float: left;margin: 50px">
 
                     <img src="assets/img/icons/png/LogoSama.png" width="40%" style="display: block;margin:auto"/>
@@ -50,6 +50,8 @@
                     มาร่วมงานด้วยกันเถอะครับ
 
                 </div>
+
+
                 <div style ="float: right;margin: 50px">
                     <nav class="jumbotron" style ="text-align: center;padding: 10">
                         <p>สิ่งที่น่าสนใจ</p>
@@ -67,6 +69,7 @@
                         </div>
                     </nav>
                 </div>
+
             </div>
             <div class="pageFooter">
                 <info:footer/>
