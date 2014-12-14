@@ -25,12 +25,12 @@
 
                 <h1 class="h1">Show User</h1>
 
-                <p style="text-align: left"><label>Account ID</label><input type="text" name="accountid" class="form-control" value="${user.accountId}" readonly/></p>
-                <p style="text-align: left"><label>First Name:</label><input type="text" name="fname" class="form-control" value="${user.fname}" readonly/></p>
-                <p style="text-align: left"><label>Last Name:</label><input type="text" name="lname" class="form-control" value="${user.lname}" readonly/></p>
-                <p style="text-align: left"><label>Balance:</label><input type="text" name="balance" class="form-control" value="${user.balance}" readonly/></p>
-                <p style="text-align: left"><label>Account Type:</label><input type="text" name="branch" class="form-control" value="${user.accountType}" readonly/></p>
-                <p style="text-align: left"><label>Branch:</label><input type="text" name="branch" class="form-control" value="${user.branchId}" readonly/></p>
+                <p style="text-align: left"><label>Account ID</label><input type="text" name="accountid" class="form-control" value="${user.accountId}" readonly style="color: black"/></p>
+                <p style="text-align: left"><label>First Name:</label><input type="text" name="fname" class="form-control" value="${user.fname}" readonly style="color: black"/></p>
+                <p style="text-align: left"><label>Last Name:</label><input type="text" name="lname" class="form-control" value="${user.lname}" readonly style="color: black"/></p>
+                <p style="text-align: left"><label>Balance:</label><input type="text" name="balance" class="form-control" value="${user.balance}" readonly style="color: black"/></p>
+                <p style="text-align: left"><label>Account Type:</label><input type="text" name="branch" class="form-control" value="${user.accountType==1?'Saving Account':'Fixed Deposit Account'}" readonly style="color: black"/></p>
+                <p style="text-align: left"><label>Branch:</label><input type="text" name="branch" class="form-control" value="${user.branchId}" readonly style="color: black"/></p>
                 <br>
                 <p style="text-align: right"><a href="Edit" ><input type="button" class="btn btn-primary btn-lg" value="Edit"></a></p>
 
