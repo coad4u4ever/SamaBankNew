@@ -22,7 +22,7 @@
                 <div style="width:716;height: 220px;">
                     <img src="assets/img/icons/png/LogoSama.png" width="150" style="display: block;margin:auto"/>
                     <h2 class="form-signin-heading" style="text-align: center">Sama Banking</h2>
-                    <h4 style="text-align: center">Welcome to Sama Banking that "High Security"</h4>
+                    <h4 style="text-align: center">Welcome to Sama Banking, The most secure banking system</h4>
                 </div>
                 <hr>
                 <div style="width:500px;margin: auto">
