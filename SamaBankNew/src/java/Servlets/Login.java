@@ -24,7 +24,7 @@ public class Login extends HttpServlet {
         if (ba == null) {
             msg = "Invalid ID";
             request.setAttribute("msg", msg);
-            getServletContext().getRequestDispatcher(response.encodeURL("/index.jsp")).forward(request, response);
+            getServletContext().getRequestDispatcher(response.encodeURL("/login.jsp")).forward(request, response);
         } else {
             String realPassword = ba.getPassword();
             if (password.equals(realPassword)) {
@@ -35,7 +35,7 @@ public class Login extends HttpServlet {
             } else {
                 msg = "Invalid Password";
                 request.setAttribute("msg", msg);
-                getServletContext().getRequestDispatcher(response.encodeURL("/index.jsp")).forward(request, response);
+                getServletContext().getRequestDispatcher(response.encodeURL("/login.jsp")).forward(request, response);
             }
         }
 

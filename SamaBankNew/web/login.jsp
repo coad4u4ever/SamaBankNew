@@ -23,6 +23,7 @@
                     <img src="assets/img/icons/png/LogoSama.png" width="150" style="display: block;margin:auto"/>
                     <h2 class="form-signin-heading" style="text-align: center">Sama Banking</h2>
                     <h4 style="text-align: center">Welcome to Sama Banking, The most secure banking system</h4>
+                    <h5 style="color: #c0392b; text-align: center">${msg}</h5>
                 </div>
                 <hr>
                 <div style="width:500px;margin: auto">
@@ -41,6 +42,9 @@
                     </form>
                     <br>
                     Don't have an account? <a href='SignUp'><font size="5"><strong>Sign Up</strong></font></a> here!
+                    
+                    <br>
+                    
                 </div>
             </div>
         </div>
