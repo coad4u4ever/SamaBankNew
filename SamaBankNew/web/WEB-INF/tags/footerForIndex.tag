@@ -5,7 +5,7 @@
 --%>
 
 <%@tag description="put the tag description here" pageEncoding="UTF-8"%>
-<%@tag body-content="empty" %>
+<%@tag body-content="scriptless" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>

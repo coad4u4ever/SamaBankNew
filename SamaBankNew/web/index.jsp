@@ -72,7 +72,7 @@
 
             </div>
             <div class="pageFooter">
-                <info:footer/>
+                <info:footerForIndex/>
             </div>
         </div>
     </body>
