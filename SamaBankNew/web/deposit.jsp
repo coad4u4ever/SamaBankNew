@@ -27,8 +27,8 @@
                     <form action="Deposit" method="POST" class="form-group" style ="box-shadow: 2px 6px 68px -9px rgba(0,0,0,0.75);">
 
                         <h1 class="h1">Deposit</h1>
-                        <p style="text-align: left"><label>Account ID</label><input type="text" name="branch" class="form-control" value="${user.accountId}" readonly/></p>
-                        <p style="text-align: left"><label>Balance:</label><input type="text" name="balance" class="form-control" value="${user.balance}" readonly/></p>
+                        <p style="text-align: left"><label>Account ID</label><input type="text" name="branch" class="form-control" value="${user.accountId}" readonly style="color: black"/></p>
+                        <p style="text-align: left"><label>Balance:</label><input type="text" name="balance" class="form-control" value="${user.balance}" readonly style="color: black"/></p>
                         <p style="text-align: left"><label>Money Amount to Deposit:</label><input type="text" name="depositamount" class="form-control"/></p>
                         <br><br>
                         <p style="text-align: right"><input type="submit" class="btn btn-primary btn-lg" value="deposit"/></p>

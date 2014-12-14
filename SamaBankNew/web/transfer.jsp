@@ -27,8 +27,8 @@
                 <info:navbarmenu activepoint="4"/>
                 <form action="Transfer" method="POST" class="form-group"style ="box-shadow: 2px 6px 68px -9px rgba(0,0,0,0.75);">
                     <h1 class="h1">Transfer</h1>
-                    <p style="text-align: left"><label>Account ID:</label><input type="text" name="branch" class="form-control" value="${user.accountId}" readonly/></p>
-                    <p style="text-align: left"><label>Balance:</label><input type="text" name="balance" class="form-control" value="${user.balance}" readonly/></p>
+                    <p style="text-align: left"><label>Account ID:</label><input type="text" name="branch" class="form-control" value="${user.accountId}" readonly style="color: black"/></p>
+                    <p style="text-align: left"><label>Balance:</label><input type="text" name="balance" class="form-control" value="${user.balance}" readonly style="color: black"/></p>
                     <p style="text-align: left"><label>Money Amount to Transfer:</label><input type="text" name="transferamount" class="form-control"/></p>
                     <p style="text-align: left"><label>Transfer To:</label></p>
                     <select class="form-control" name="transferTo">
