@@ -41,6 +41,7 @@ public class Withdraw extends HttpServlet {
             } else {
                 boolean isSuccess = ba.withdraw(Double.parseDouble(money));
                 if (isSuccess) {
+                    ba.setBalance(BankAccount.getBalanceByAccountID(ba.getAccountId()));
                     request.setAttribute("msg", "Withdraw Successful.");
                 } else {
                     request.setAttribute("msg", "Withdraw Failed! SQL Error!");

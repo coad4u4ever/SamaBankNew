@@ -26,7 +26,7 @@
                     </div>
                     <form method=post>
                         <br>
-                        <img src="assets/img/icons/png/LogoSama.png"  width="74" style="display: block;float: left;margin: 20px"/> 
+                        <a href="index.jsp"><img src="assets/img/icons/png/LogoSama.png"  width="74" style="display: block;float: left;margin: 20px"/></a> 
                         
                         <div style="margin:auto;width: 80%;">
                             <p style ="float: left"><a href="http://internet1.customs.go.th/ext/Exchange/main_exchange.jsp" style ="color: white;text-decoration: none" onmouseover="xxx">::Exchange::&nbsp;&nbsp;&nbsp;</a></p>  

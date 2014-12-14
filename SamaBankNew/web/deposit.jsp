@@ -25,9 +25,9 @@
                 <nav class="navbar navbar-default" >
 
                     <ul class="nav navbar-nav" >
-                        <li class="active"><a href="viewdata">View User Data</a></li>
-                        <li><a href="withdraw">Withdraw</a></li>
-                        <li><a href="deposit">Deposit</a></li>
+                        <li><a href="showuser.jsp">View User Data</a></li>
+                        <li><a href="Withdraw">Withdraw</a></li>
+                        <li class="active"><a href="Deposit">Deposit</a></li>
                         <li><a href="transfer">Transfer</a></li>
                         <li><a href="showtransaction">Show Transaction</a></li>
                     </ul>
@@ -36,9 +36,9 @@
                     <form action="Deposit" method="POST" class="form-group" style ="box-shadow: 2px 6px 68px -9px rgba(0,0,0,0.75);">
 
                         <h1 class="h1">Deposit</h1>
-                        <p style="text-align: left"><label>Account Type:</label><input type="text" name="branch" class="form-control" value="${user.accType}" readonly/></p>
+                        <p style="text-align: left"><label>Account Type:</label><input type="text" name="branch" class="form-control" value="${user.accountType}" readonly/></p>
                         <p style="text-align: left"><label>Balance:</label><input type="text" name="balance" class="form-control" value="${user.balance}" readonly/></p>
-                        <p style="text-align: left"><label>Money Amount to Deposit:</label><input type="text" name="withdraw" class="form-control"/></p>
+                        <p style="text-align: left"><label>Money Amount to Deposit:</label><input type="text" name="depositamount" class="form-control"/></p>
                         <br><br>
                         <p style="text-align: right"><input type="submit" class="btn btn-primary btn-lg" value="deposit"/></p>
                     </form> 

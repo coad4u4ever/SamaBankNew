@@ -24,9 +24,9 @@
                 <nav class="navbar navbar-default">
 
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="viewdata">View User Data</a></li>
-                        <li><a href="withdraw">Withdraw</a></li>
-                        <li><a href="deposit">Deposit</a></li>
+                        <li><a href="showuser.jsp">View User Data</a></li>
+                        <li class="active"><a href="Withdraw">Withdraw</a></li>
+                        <li><a href="Deposit">Deposit</a></li>
                         <li><a href="transfer">Transfer</a></li>
                         <li><a href="showtransaction">Show Transaction</a></li>
                     </ul>
