@@ -8,7 +8,7 @@
 <%@tag body-content="empty" %>
 <%@attribute name="title" type="java.lang.String"%>
 
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-inverse" role="navigation">
     <div class="container-fluid" id = "nav">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
