@@ -33,7 +33,7 @@
                     </ul>
                 </nav>
                 <div>
-                    <form action="deposit" method="POST" class="form-group" style ="box-shadow: 2px 6px 68px -9px rgba(0,0,0,0.75);">
+                    <form action="Deposit" method="POST" class="form-group" style ="box-shadow: 2px 6px 68px -9px rgba(0,0,0,0.75);">
 
                         <h1 class="h1">Deposit</h1>
                         <p style="text-align: left"><label>Account Type:</label><input type="text" name="branch" class="form-control" value="${user.accType}" readonly/></p>

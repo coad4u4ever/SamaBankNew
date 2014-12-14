@@ -48,16 +48,16 @@ public class Deposit extends HttpServlet {
                 System.out.println(ba.getBalance());
                 msg = "Deposit complete";
                 request.setAttribute("msg", msg);
-                getServletContext().getRequestDispatcher("/deposit.jsp").forward(request, response);
+                getServletContext().getRequestDispatcher(response.encodeURL("/deposit.jsp")).forward(request, response);
             } else {
                 msg = "Deposit error";
                 request.setAttribute("msg", msg);
-                getServletContext().getRequestDispatcher("/deposit.jsp").forward(request, response);
+                getServletContext().getRequestDispatcher(response.encodeURL("/deposit.jsp")).forward(request, response);
             }
         } else {
             msg = "Invalid amount";
             request.setAttribute("msg", msg);
-            getServletContext().getRequestDispatcher("/deposit.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher(response.encodeURL("/deposit.jsp")).forward(request, response);
         }
     }
 

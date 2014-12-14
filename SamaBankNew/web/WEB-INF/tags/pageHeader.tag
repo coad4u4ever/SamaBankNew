@@ -25,7 +25,7 @@
                 <c:choose>
                     <c:when test = "${user==null}">
                         <li>
-                            <a href="Login" title = "Login to SAMA BANK">Guest</a>
+                            <a href="login.jsp" title = "Login to SAMA BANK">Guest</a>
                         </li>
                     </c:when>
                     <c:otherwise>

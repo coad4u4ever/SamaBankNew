@@ -49,7 +49,7 @@ public class Withdraw extends HttpServlet {
         } else {
             request.setAttribute("msg", "It's not a number!");
         }
-        getServletContext().getRequestDispatcher("/withdraw.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher(response.encodeURL("/withdraw.jsp")).forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

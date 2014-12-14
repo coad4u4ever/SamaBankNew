@@ -24,18 +24,18 @@ public class Login extends HttpServlet {
         if (ba == null) {
             msg = "Invalid ID";
             request.setAttribute("msg", msg);
-            getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher(response.encodeURL("/index.jsp")).forward(request, response);
         } else {
             String realPassword = ba.getPassword();
             if (password.equals(realPassword)) {
                 HttpSession s = request.getSession();
                 s.setAttribute("user", ba);
                 s.setMaxInactiveInterval(60*60*24*7);
-                getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+                getServletContext().getRequestDispatcher(response.encodeURL("/index.jsp")).forward(request, response);
             } else {
                 msg = "Invalid Password";
                 request.setAttribute("msg", msg);
-                getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+                getServletContext().getRequestDispatcher(response.encodeURL("/index.jsp")).forward(request, response);
             }
         }
 

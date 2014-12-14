@@ -31,9 +31,9 @@
                         <li><a href="showtransaction">Show Transaction</a></li>
                     </ul>
                 </nav>
-                <form action="withdraw" method="POST" class="form-group"style ="box-shadow: 2px 6px 68px -9px rgba(0,0,0,0.75);">
+                <form action="Withdraw" method="POST" class="form-group"style ="box-shadow: 2px 6px 68px -9px rgba(0,0,0,0.75);">
                     <h1 align='center' class="h1">Withdraw</h1>
-                    <p style="text-align: left"><label>Account Type:</label><input type="text" name="branch" class="form-control" value="${user.accType}" readonly/></p>
+                    <p style="text-align: left"><label>Account Type:</label><input type="text" name="branch" class="form-control" value="${user.accountType}" readonly/></p>
                      <p style="text-align: left"><label>Balance:</label><input type="text" name="balance" class="form-control" value="${user.balance}" readonly/></p>
                      <p style="text-align: left"><label>Money Amount to Withdraw:</label><input type="text" name="withdraw" class="form-control"/></p>
                     

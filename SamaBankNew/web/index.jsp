@@ -29,11 +29,11 @@
                     <p style ="text-align: center">ระบบการเงินออนไลน์</p>
                     <nav class="navbar navbar-inverse" role="navigation">
                         <ul class="nav navbar-nav">
-                            <li><a href="viewdata">View User Data</a></li><br>
-                            <li><a href="withdraw">Withdraw</a></li><br>
-                            <li><a href="deposit">Deposit</a></li><br>
-                            <li><a href="transfer">Transfer</a></li><br>
-                            <li><a href="showtransaction">Show Transaction</a></li>
+                            <li><a href="showuser.jsp">View User Data</a></li><br>
+                            <li><a href="Withdraw">Withdraw</a></li><br>
+                            <li><a href="Deposit">Deposit</a></li><br>
+                            <li><a href="Transfer">Transfer</a></li><br>
+                            <li><a href="ShowTransaction">Show Transaction</a></li>
                         </ul>
                     </nav>
                 </div>
