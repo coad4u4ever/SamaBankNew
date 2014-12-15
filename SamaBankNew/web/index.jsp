@@ -52,10 +52,10 @@
                 </div>
 
 
-                <div style ="float: right;margin: 50px">
-                    <nav class="jumbotron" style ="text-align: center;padding: 10">
+                <div style ="float: right">
+                    <nav class="jumbotron" style ="text-align: center;width:460px;border-radius: 10px;height: 460px;margin-right: 30px;margin-top: -10px">
                         <p>สิ่งที่น่าสนใจ</p>
-                        <img src="assets/img/Promr.jpg" style="width: 400px;height: 300px">
+                        <img src="assets/img/Promr.jpg"style="width: 400px;height: 300px">
                         <div style ="height:40px">
                             <nav>
                                 <ul class="pagination pagination-sm" style="margin:5px 0 5px 100px;display: inherit"">
