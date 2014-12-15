@@ -41,7 +41,12 @@ public class Deposit extends HttpServlet {
         }
         String msg = "";
         if (Utilities.Checker.isDouble(depositamount)) {
-
+            if(Double.parseDouble(depositamount)<=0){
+                msg = "Invalid amount";
+                request.setAttribute("msg", msg);
+                getServletContext().getRequestDispatcher(response.encodeURL("/deposit.jsp")).forward(request, response);
+                return;
+            }
             if (ba.deposit(Double.parseDouble(depositamount))) {
                 ba.setBalance(BankAccount.getBalanceByAccountID(ba.getAccountId()));
                 s.setAttribute("user", ba);

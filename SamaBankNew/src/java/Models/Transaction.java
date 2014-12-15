@@ -140,7 +140,7 @@ public class Transaction {
         List<Transaction> trans = null;
         Transaction tran = null;
         Connection con = ConnectionAgent.getConnection();
-        final String FIND_TRANSACTION_BY_NO_SQL = "SELECT * FROM TRANSACTION WHERE accountid = ?";
+        final String FIND_TRANSACTION_BY_NO_SQL = "SELECT * FROM TRANSACTION WHERE accountid = ? ORDER BY date DESC";
         try {
             PreparedStatement psm = con.prepareStatement(FIND_TRANSACTION_BY_NO_SQL);
             psm.setLong(1, accid);
