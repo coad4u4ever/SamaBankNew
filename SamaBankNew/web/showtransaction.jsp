@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="assets/dist/css/menus.css"/>
     </head>
     <body>
-        <info:pageHeader title="Edit User"/>
+        <info:pageHeader title="Show Transaction"/>
         <div class="container-fluid" align="center" width ="76%" style ="padding: 0;margin: 0 ;border-radius: 100px 100px 0px 0px" >
             <div id="main"style ="border-radius: 10px 10px 0px 0px" >
                 <info:navbarmenu activepoint="5"/>

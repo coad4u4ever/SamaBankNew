@@ -59,7 +59,7 @@ public class Transfer extends HttpServlet {
                 msg = "Invalid amount";
                 request.setAttribute("msg", msg);
                 getServletContext().getRequestDispatcher(response.encodeURL("/transfer.jsp")).forward(request, response);
-
+                return;
             } else if (transfermoney > ba.getBalance()) {
                 msg = "Transfer more than your balance";
                 request.setAttribute("msg", msg);

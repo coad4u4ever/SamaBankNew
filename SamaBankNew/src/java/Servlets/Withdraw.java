@@ -66,6 +66,7 @@ public class Withdraw extends HttpServlet {
                 msg = "Invalid amount";
                 request.setAttribute("msg", msg);
                 getServletContext().getRequestDispatcher(response.encodeURL("/withdraw.jsp")).forward(request, response);
+                return;
             }
             if (ba.withdraw(Double.parseDouble(withdrawamount))) {
                 ba.setBalance(BankAccount.getBalanceByAccountID(ba.getAccountId()));
